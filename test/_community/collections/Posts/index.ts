@@ -22,5 +22,33 @@ export const PostsCollection: CollectionConfig = {
         features: ({ defaultFeatures }) => [...defaultFeatures],
       }),
     },
+    {
+      name: 'cover',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
+      name: 'files',
+      type: 'upload',
+      relationTo: 'media',
+      hasMany: true,
+      admin: {
+        isSortable: true,
+      },
+    },
+    {
+      name: 'coverRelationship',
+      type: 'relationship',
+      relationTo: 'media',
+    },
+    {
+      name: 'filesRelationship',
+      type: 'relationship',
+      relationTo: 'media',
+      hasMany: true,
+      admin: {
+        isSortable: true,
+      },
+    },
   ],
 }
